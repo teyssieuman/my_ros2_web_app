@@ -1,0 +1,25 @@
+{
+    "name": "ros2-web-app",
+    "build": {
+        "dockerfile": "../docker/Dockerfile"
+    },
+    "workspaceFolder": "/ros2_ws",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-ros.ros",
+                "ms-vscode.cmake-tools"
+            ]
+        }
+    },
+    "mounts": [
+        "source=${localWorkspaceFolder}/src,target=/ros2_ws/src,type=bind,consistency=cached"
+    ],
+    "forwardPorts": [
+        8080,
+        9090
+    ]
+    //,
+    //"postCreateCommand": "source /opt/ros/jazzy/setup.bash && colcon build"
+}
